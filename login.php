@@ -7,17 +7,6 @@ $password = $_SESSION['signin-data']['password'] ?? null;
 
 unset($_SESSION['signin-data']);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Đăng nhập</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-<body>
     <section class="form-section">
         <div class="card">
 <!-- Modal -->
@@ -66,6 +55,3 @@ unset($_SESSION['signin-data']);
         </div>
     </section>
 
-    <script src="./main.js"></script>
-</body>
-</html>

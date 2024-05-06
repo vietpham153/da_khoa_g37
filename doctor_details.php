@@ -3,6 +3,10 @@
 <?php 
 require_once('./check_user.php');
 require_once('./layouts/link_css.php'); 
+$staff_uuid = $_GET['staff_uuid'];
+$query = "SELECT staffs_information.*, users.* FROM staffs_information join users on staffs_information.staff_uuid = users.uuid  
+WHERE staffs_information.staff_uuid= '$staff_uuid'";
+$doctor_details = mysqli_query($conn,$query);
 ?>
 	<body>
 
@@ -44,12 +48,19 @@ require_once('./layouts/link_css.php');
 			<section id="doctor-breadcrumbs" class="bg-fixed doctor-details-section division">	
 				<div class="container">
 					<div class="row">
+					<?php
+								if ($doctor_details && mysqli_num_rows($doctor_details) > 0) {
+								// Duyệt qua từng bản ghi và hiển thị thông tin
+								while ($details_record = mysqli_fetch_assoc($doctor_details)) { ?>
 						<div class="col-md-7 offset-md-5">
 			 				<div class="doctor-data white-color">
 
 			 					<!-- Name -->	
-			 					<h2 class="h2-xs">Dr. Matthew Anderson</h2>
-			 					<h5 class="h5-md">Neurologist / Epilepsy Specialist / Cardiologist</h5>
+			 					<?php if(isset($details_record['last_name']) && isset($details_record['first_name'])): ?>
+									<h2 class="h2-xs">BS. <?php echo $details_record['last_name'] . ' ' .$details_record['first_name']; ?></h2>
+									<?php endif; ?>
+								<h5 class="h5-md">Neurologist / Epilepsy Specialist / Cardiologist</h5>
+			 					
 
 							</div>
 						</div>
@@ -64,14 +75,19 @@ require_once('./layouts/link_css.php');
 			<section id="doctor-1-details" class="doctor-details-section division">	
 				<div class="container">
 					<div class="row">
-
-
+					
+						
+			 					
+							
 						<!-- DOCTOR PHOTO -->
 						<div class="col-md-5">
 			 				<div class="doctor-photo mb-40">
 
 			 					<!-- Photo -->	
-			 					<img class="img-fluid" src="images/doctor-3.jpg" alt="doctor-foto">
+								 <?php if(isset($details_record['image'])): ?>
+                        		<img class="img-fluid" src="./images/doctors/<?php echo $details_record['image']; ?>" width="300" height="300" alt="doctor-foto">
+                    <?php endif; ?>
+			 					
 
 			 					<!-- Doctor Info -->
 			 					<div class="doctor-info">
@@ -233,7 +249,12 @@ require_once('./layouts/link_css.php');
 							</div>
 						</div>	<!-- END DOCTOR BIO -->
 
-
+	<?php }
+			} else {
+				// Nếu không có bản ghi nào được trả về
+				echo "Không có dữ liệu.";
+			}
+	?>
 					</div>    <!-- End row -->	
 				</div>	   <!-- End container -->
 			</section>  <!-- END DOCTOR-1 DETAILS -->

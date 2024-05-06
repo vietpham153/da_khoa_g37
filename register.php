@@ -13,15 +13,6 @@ unset($_SESSION['signup-data']);
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Đăng ký</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
 
 <section class="form-section">
         <div class="card">
@@ -95,7 +86,7 @@ unset($_SESSION['signup-data']);
                     <!-- Submit button -->
                     <button id="submitBtn" name="submit" class="btn btn-primary btn-block blue-color">Đăng Ký</button>
                     <div class="btn-rg">
-                    <p> Đã có tài khoản, quay lại <a href="" id="rg-form" data-toggle="modal" data-target="#login">Đăng Nhập</a></p>
+                    <p> Đã có tài khoản, quay lại <a href="" id="lg-form" data-toggle="modal" data-target="#login">Đăng Nhập</a></p>
                     </div>
                 </form>
             </div>
@@ -106,6 +97,3 @@ unset($_SESSION['signup-data']);
 
         </div>
     </section>
-
-</body>
-</html>

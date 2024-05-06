@@ -10,12 +10,11 @@
 							<div class="statistic-block icon-lg wow fadeInUp" data-wow-delay="0.4s">
 
 								<!-- Icon  -->
-								<span class="flaticon-062-cardiogram-3"></span>
+								<span class="fas fa-heart-pulse" style="font-size: 35px;"></span>
 
 								<!-- Text -->
 								<h5 class="statistic-number">9,<span class="count-element">632</span></h5>
-								<p class="txt-400">Happy Patients</p>																			
-													
+								<p class="txt-400">Bệnh nhân hài lòng</p>																			
 							</div>								
 						</div>
 
@@ -25,12 +24,11 @@
 							<div class="statistic-block icon-lg wow fadeInUp" data-wow-delay="0.6s">
 
 								<!-- Icon  -->
-								<span class="flaticon-137-doctor"></span>
+								<span class="fas fa-user-doctor" style="font-size: 35px;"></span>
 
 								<!-- Text -->
 								<h5 class="statistic-number"><span class="count-element">178</span></h5>	
-								<p class="txt-400">Qualified Doctors</p>										
-																		
+								<p class="txt-400">Dội ngũ nhân viên</p>										
 							</div>							
 						</div>
 
@@ -40,27 +38,26 @@
 							<div class="statistic-block icon-lg wow fadeInUp" data-wow-delay="0.8s">	
 
 								<!-- Icon  -->
-								<span class="flaticon-065-hospital-bed"></span>
+								<span class="fas fa-bed-pulse" style="font-size: 35px;"></span>
 
 								<!-- Text -->
 								<h5 class="statistic-number"><span class="count-element">864</span></h5>
-								<p class="txt-400">Clinic Rooms</p>									
+								<p class="txt-400">Phòng bệnh</p>									
 
 							</div>						
 						</div>
-					
+
 
 						<!-- STATISTIC BLOCK #4 -->
 						<div class="col-md-6 col-lg-3">						
 							<div class="statistic-block icon-lg wow fadeInUp" data-wow-delay="1s">	
 
 								<!-- Icon  -->
-								<span class="flaticon-040-placeholder"></span>
+								<span class="fas fa-hospital" style="font-size: 35px;"></span>
 
 								<!-- Text -->	
 								<h5 class="statistic-number"><span class="count-element">473</span></h5>
-								<p class="txt-400">Local Partners</p>				
-								
+								<p class="txt-400">Các bên liên kết</p>				
 							</div>						
 						</div>
 

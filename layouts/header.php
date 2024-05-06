@@ -11,14 +11,13 @@
 			    	<div class="headerwp clearfix">
 			    		<!-- Address -->
 			     		<div class="headertopleft">			     			
-			        		<div class="address clearfix"><span><i class="fas fa-map-marker-alt"></i>121 King St,
-			            		Melbourne, VIC 3000 </span> <a href="tel:123456789" class="callusbtn"><i class="fas fa-phone"></i>(800)-569-7890</a>
+			        		<div class="address clearfix"><span><i class="fas fa-map-marker-alt"></i>475 ĐBP,
+			            		Bình Thạnh, HCMC </span> <a href="tel:123456789" class="callusbtn"><i class="fas fa-phone"></i>(+84)-4569-7890</a>
 			            	</div>
 			     		</div>
 			     		<!-- Social Links -->
 					    <div class="headertopright">
 					    	<a class="googleicon" title="Google" href="#"><i class="fab fa-google"></i> <span class="mobiletext02">Google</span></a>
-					        <a class="linkedinicon" title="Linkedin" href="#"><i class="fab fa-linkedin-in"></i> <span class="mobiletext02">Linkedin</span></a>
 					        <a class="twittericon" title="Twitter" href="#"><i class="fab fa-twitter"></i> <span class="mobiletext02">Twitter</span></a>
 					        <a class="facebookicon" title="Facebook" href="#"><i class="fab fa-facebook-f"></i> <span class="mobiletext02">Facebook</span></a>
 				      	</div>
@@ -41,11 +40,11 @@
 									<li aria-haspopup="true"><a href="#">Dịch vụ<span class="wsarrow"></span></a>
 					           		<ul class="sub-menu">
 					              		<li aria-haspopup="true"><a href="services.php">Dịch vụ y tế</a></li>
-					              		<li aria-haspopup="true"><a href="demo-3.html">Bảng giá chung</a></li>
-					              		<li aria-haspopup="true"><a href="demo-4.html">Giờ làm việc</a></li>
-					              		<li aria-haspopup="true"><a href="demo-5.html">Quy trình khám chữa bệnh</a></li>
-					              		<li aria-haspopup="true"><a href="demo-6.html">Hướng dẫn dặt lịch khám</a></li>
-					              		<li aria-haspopup="true"><a href="demo-7.html">Bảo hiểm</a></li>
+					              		<li aria-haspopup="true"><a href="#">Bảng giá chung</a></li>
+					              		<li aria-haspopup="true"><a href="#">Giờ làm việc</a></li>
+					              		<li aria-haspopup="true"><a href="#">Quy trình khám chữa bệnh</a></li>
+					              		<li aria-haspopup="true"><a href="#">Hướng dẫn dặt lịch khám</a></li>
+					              		<li aria-haspopup="true"><a href="#">Bảo hiểm</a></li>
 					           		</ul>
 					          		</li>	<!-- END DROPDOWN MENU -->
 								<li aria-haspopup="true"><a href="doctors_list.php">Đội ngũ bác sĩ</a></li>
@@ -67,8 +66,8 @@
 										
 								
 								<ul class="sub-menu">
-					              		<li aria-haspopup="true"><a href="services.php">Thông tin cá nhân</a></li>
-					              		<li aria-haspopup="true"><a href="demo-3.html">Lịch sử đặt lịch</a></li>
+					              		<li aria-haspopup="true"><a href="#">Thông tin cá nhân</a></li>
+					              		<li aria-haspopup="true"><a href="#">Lịch sử đặt lịch</a></li>
 					              		<li aria-haspopup="true"><a href="logout.php">Đăng xuất</a></li>
 					           		</ul>
 									<?php }?>

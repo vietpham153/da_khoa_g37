@@ -17,7 +17,7 @@
 
 /* ==========================================================================
   01. GENERAL & BASIC STYLES
-  =========================================================================== */
+  =================================================================style="font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;"========== */
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -380,7 +380,7 @@ button.btn.btn-primary.btn-block:hover {
 
 h1, h2, h3, h4, h5, h6 {
   color: #222;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: -0.25px;
 }
@@ -814,7 +814,7 @@ ul.content-list li:last-child {
 
 span.section-id {
   font-size: 0.825rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   display: block;
@@ -1302,7 +1302,7 @@ span.id-color {
 
 p.header-widget-phone {
   font-size: 17px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   margin-top: 3px;
   margin-bottom: 0;
@@ -1949,7 +1949,7 @@ p.header-widget-phone {
 .hero-form .loading {
   color: #f0f0f0;
   font-size: 17px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -2558,7 +2558,7 @@ td.text-right {
   color: #fff;
   font-size: 16px;
   padding: 18px 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   border-top: none;
@@ -2736,7 +2736,7 @@ td.text-right {
 #info-8 .table td, #info-8 .table th {
   font-size: 16px;
   padding: 18px 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   border-top: none;
@@ -2768,7 +2768,7 @@ td.text-right {
   color: #fff;
   font-size: 16px;
   padding: 18px 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   border-top: none;
@@ -2987,7 +2987,7 @@ td.text-right {
   background-color: transparent; 
   color: #888;
   font-size: 1rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: -0;
   margin: 0 30px;
@@ -3272,7 +3272,7 @@ td.text-right {
 
 .statistic-block p {
   font-size: 1.05rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 0;
 }
 
@@ -3656,7 +3656,7 @@ td.text-right {
 
 .pricing-table span.price {
   font-size: 70px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1;
   font-weight: 700;
   letter-spacing: -0.5px;
@@ -3664,7 +3664,7 @@ td.text-right {
 
 .pricing-table sup {
   font-size: 45px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   top: -7px;
   right: 2px;
@@ -3847,7 +3847,7 @@ td.text-right {
 .review-2 p {
   color: #444;
   font-size: 1.35rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.35;
   font-weight: 400;
 } 
@@ -4071,7 +4071,7 @@ td.text-right {
 #banner-1 .banner-details span {
   color: #444;
   font-size: 1.1rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 2.15rem!important;
   font-weight: 400;
   position: relative;
@@ -4519,7 +4519,7 @@ a.share-ico.ico-pinterest { background-color: #cb2027; color: #fff; }
 .comment-form .loading {
   color: #666;
   font-size: 17px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -4688,7 +4688,7 @@ p.contact-notice {
 .contact-form .loading {
   color: #666;
   font-size: 17px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -5385,7 +5385,7 @@ ul.blog-category-list li:hover {
   24. APPOINTMENT PAGE
   =========================================================================== */
 
-#appointment-form-holder { 
+#appointment-holder { 
   margin: 40px 0 25px;
 }
 
@@ -5393,8 +5393,8 @@ ul.blog-category-list li:hover {
 /*  Appointment Form Input
 /*------------------------------------------*/
 
-.appointment-form .form-control,
-.appointment-form .custom-select {
+.appointment .form-control,
+.appointment .custom-select {
   background-color: #fff;
   border: 2px solid #ddd;
   color: #333;
@@ -5415,7 +5415,7 @@ ul.blog-category-list li:hover {
   transition: all 400ms ease-in-out;
 }
 
-.appointment-form .custom-select {
+.appointment .custom-select {
   display: inline-block;
   width: 100%;
   color: #777;
@@ -5426,14 +5426,14 @@ ul.blog-category-list li:hover {
 /*  Appointment Form Textarea
 /*------------------------------------------*/
 
-.appointment-form textarea { min-height: 160px; }
-.appointment-form textarea.form-control { padding: 20px 15px; }
+.appointment textarea { min-height: 160px; }
+.appointment textarea.form-control { padding: 20px 15px; }
 
 /*------------------------------------------*/
 /*  Appointment Form Input Focus
 /*------------------------------------------*/
 
-.appointment-form .form-control:focus {
+.appointment .form-control:focus {
   background-color: #fff;
   border-color: #00a3c8;
   outline: 0px none;
@@ -5444,7 +5444,7 @@ ul.blog-category-list li:hover {
 /*  Appointment Form Button
 /*------------------------------------------*/
 
-.appointment-form .btn {
+.appointment .btn {
   display: block;
   width: 100%;
   height: 52px;
@@ -5452,7 +5452,7 @@ ul.blog-category-list li:hover {
   margin-top: 15px;
 }
 
-.appointment-form .btn:focus {
+.appointment .btn:focus {
   outline: 0px none;
   box-shadow: none;
 }
@@ -5461,27 +5461,27 @@ ul.blog-category-list li:hover {
 /*  Appointment Form Message
 /*------------------------------------------*/
 
-.appointment-form label.error {
+.appointment label.error {
   color: #e74c3c;
   font-size: 14px;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
-.appointment-form-msg {
+.appointment-msg {
   width: 100%!important;
   display: block;
   text-align: center;
 }
 
-.appointment-form .sending-msg {
+.appointment .sending-msg {
   margin-top: 20px;
 }
 
-.appointment-form .loading {
+.appointment .loading {
   color: #666;
   font-size: 17px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -5506,7 +5506,7 @@ ul.blog-category-list li:hover {
 }
 
 .cd-schedule .timeline span {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -5618,7 +5618,7 @@ ul.blog-category-list li:hover {
 
 #terms-page p.p-notice {
   font-size: 0.915rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 900;
   letter-spacing: 0.5px;
 }
@@ -5710,7 +5710,7 @@ nav a#pull {
   position: fixed;
   z-index: 9999;
   font-size: 13px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow: hidden;
   right: -230px;
   top: 125px;
@@ -5783,7 +5783,7 @@ nav a#pull {
 #stlChanger p {
   color: #444;
   font-size: 15px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.5px;

@@ -26,6 +26,8 @@ $conn = mysqli_connect("localhost","root","","laravel");
                 $_SESSION['uuid'] = $user_record['uuid'];
                 $_SESSION['name'] = $user_record['last_name'] . ' ' .$user_record['first_name'];
                 $_SESSION['gender'] = $user_record['gender'];
+                $_SESSION['email'] = $user_record['email'];
+                $_SESSION['phone_number'] = $user_record['phone_number'];
                 
                 header('location: ' . ROOT_URL );
             } else{
