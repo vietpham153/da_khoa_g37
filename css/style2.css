@@ -498,7 +498,7 @@ ul.content-list li:last-child {
 /*------------------------------------------*/
 
 .btn {
-  background-color: transparent;
+ 
   color: #fff;
   font-size: 0.915rem;
   line-height: 1;
@@ -5712,7 +5712,7 @@ nav a#pull {
   font-size: 13px;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow: hidden;
-  right: -230px;
+  right: -350px;
   top: 125px;
   cursor: pointer;
   -webkit-border-radius: 0;
@@ -5730,17 +5730,17 @@ nav a#pull {
 }
 
 #stlChanger .bgChanger {
-  min-width: 280px;
-  min-height: 280px;
+  min-width: 400px;
+  min-height: 400px;
 }
 
 #stlChanger .blockChanger {
-  width: 230px;
+  width: 350px;
 }
 
 #stlChanger .chBody {
   background: #f9f9f9;
-  width: 230px;
+  width: 350px;
   position: relative;
   overflow: hidden;
   border: 1px solid #e0e0e0;

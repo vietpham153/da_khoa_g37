@@ -87,7 +87,7 @@ $department_result = mysqli_query($conn, $department_query);
 										<!-- Form Select -->
 										<div id="input-department" class="col-md-12 input-department">
 											<select id="departments_select" name="department"
-												class="custom-select department" required>
+												class="custom-select department">
 												<option value="">Chọn Khoa</option>
 
 
@@ -102,7 +102,7 @@ $department_result = mysqli_query($conn, $department_query);
 										</div>
 										<!-- Form Select -->
 										<div id="input-doctor" class="col-md-12 input-doctor">
-											<select id="doctors_select" name="doctor_uuid" class="custom-select doctor" required>
+											<select id="doctors_select" name="doctor_uuid" class="custom-select doctor">
 												<option value="">Chọn bác sĩ</option>
 												<?php
 												if ($doctor_result && mysqli_num_rows($doctor_result) > 0) {
@@ -135,22 +135,22 @@ $department_result = mysqli_query($conn, $department_query);
 											<option value="">Chọn Thứ</option>
 											<?php
 											// Vòng lặp để tạo ra các option cho các ngày từ thứ 2 đến thứ 6
-											for ($i = 2; $i <= 6; $i++) {
+											for ($i = 1; $i <= 5; $i++) {
 												// Sử dụng switch case để đặt tên cho các ngày
 												switch ($i) {
-													case 2:
+													case 1:
 														$day = "Thứ 2";
 														break;
-													case 3:
+													case 2:
 														$day = "Thứ 3";
 														break;
-													case 4:
+													case 3:
 														$day = "Thứ 4";
 														break;
-													case 5:
+													case 4:
 														$day = "Thứ 5";
 														break;
-													case 6:
+													case 5:
 														$day = "Thứ 6";
 														break;
 													default:
@@ -294,7 +294,7 @@ $department_result = mysqli_query($conn, $department_query);
 									<tr>
 										<td>Ca 12</td>
 										<td> - </td>
-										<td class="text-right">22:00 AM - 24:00 PM</td>
+										<td class="text-right">22:00 AM - 00:00 PM</td>
 									</tr>
 								</tbody>
 							</table>

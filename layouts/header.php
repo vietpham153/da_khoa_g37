@@ -33,7 +33,7 @@
       					<nav class="wsmenu clearfix">
         					<ul class="wsmenu-list">
         						<!-- DROPDOWN MENU -->
-					        	<li aria-haspopup="true"><a href="#">Trang chủ</a>
+					        	<li aria-haspopup="true"><a href="./">Trang chủ</a>
 					          	</li>	<!-- END DROPDOWN MENU -->
 					          	<!-- HALF MENU -->
 									<!-- DROPDOWN MENU -->
@@ -67,7 +67,7 @@
 								
 								<ul class="sub-menu">
 					              		<li aria-haspopup="true"><a href="#">Thông tin cá nhân</a></li>
-					              		<li aria-haspopup="true"><a href="#">Lịch sử đặt lịch</a></li>
+					              		<li aria-haspopup="true"><a href="history.php">Lịch sử đặt lịch</a></li>
 					              		<li aria-haspopup="true"><a href="logout.php">Đăng xuất</a></li>
 					           		</ul>
 									<?php }?>
