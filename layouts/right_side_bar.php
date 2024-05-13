@@ -1,10 +1,24 @@
 <?php
-$query = "SELECT appointments.user_uuid, appointments.day_id, appointments.shift_id, appointments.note, appointments.status, appointments.updated_at, shifts.name FROM appointments 
+if(!empty($_SESSION['uuid'])){
+
+	$query = "SELECT appointments.user_uuid, appointments.day_id, appointments.shift_id, appointments.note, appointments.status, appointments.updated_at, shifts.name
+FROM appointments 
 join shifts on appointments.shift_id = shifts.id
+where appointments.user_uuid = '{$_SESSION['uuid']}' 
 ORDER BY updated_at DESC";
+
 $details = mysqli_query($conn, $query);
 
 $record = mysqli_fetch_assoc($details);
+
+if(empty($record['user_uuid'])){
+	$record['user_uuid'] = 'null';
+}
+}else{
+
+}
+
+
 $dayNames = array(
 	1 => 'Thứ 2',
 	2 => 'Thứ 3',
@@ -58,16 +72,18 @@ $shiftNames = array(
 									</tr>
 								</tbody>
 							</table>
-						<?php } else { ?>
-							<p>lịch hẹn chưa được xác nhận</p>
-						<?php } ?>
+						</div>
 					<?php } else { ?>
-						<p>bạn chưa có lịch hẹn</p>
+						<p>lịch hẹn chưa được xác nhận</p>
 					<?php } ?>
 				<?php } else { ?>
-					<p><a href="">Đăng nhập</a>để hiển thị lịch hẹn sắp tới của bạn</p>
+					
+					<p>bạn chưa có lịch hẹn</p>
 				<?php } ?>
-			</div>
+			<?php } else { ?>
+				<p><a href="">Đăng nhập</a>để hiển thị lịch hẹn sắp tới của bạn</p>
+			<?php } ?>
+
 
 		</div>
 	</div>
