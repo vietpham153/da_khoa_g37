@@ -130,8 +130,7 @@ $department_result = mysqli_query($conn, $department_query);
 
 
 									<div class="col-md-12 input-doctor">
-										<select id="day_id" name="day_id" class="custom-select doctor"
-											required>
+										<select id="day_id" name="day_id" class="custom-select doctor" required>
 											<option value="">Chọn Thứ</option>
 											<?php
 											// Vòng lặp để tạo ra các option cho các ngày từ thứ 2 đến thứ 6
@@ -153,6 +152,12 @@ $department_result = mysqli_query($conn, $department_query);
 													case 5:
 														$day = "Thứ 6";
 														break;
+													case 6:
+														$day = "Thứ 7";
+														break;
+													case 0:
+														$day = "Chủ Nhật";
+														break;
 													default:
 														$day = "Không xác định";
 												}
@@ -165,10 +170,9 @@ $department_result = mysqli_query($conn, $department_query);
 
 
 									<!-- Chọn bác sĩ -->
-									<div id="input-shifts" class="col-md-12 input-doctor">
-										<select id="inlineFormCustomSelect2" name="shift_id" class="custom-select doctor"
-											required>
-											<option value="">Chọn ca</option>
+									<div class="col-md-12 input-doctor">
+										<select id="shift_id" name="shift_id" class="custom-select doctor" required>
+											<option value="">Chọn Ca</option>
 											<?php
 											// Duyệt qua từng bản ghi và hiển thị thông tin
 											while ($shift_record = mysqli_fetch_assoc($shift_result)) { ?>
@@ -210,6 +214,15 @@ $department_result = mysqli_query($conn, $department_query);
 											class="btn btn-blue blue-hover submit">Đặt lịch</button>
 									</div>
 									<!-- Contact Form Message -->
+								</form>
+								<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded"
+									action="momoqrcode.php">
+									<input type="submit" name="momo" value="Thanh toan MOMO QRcode"
+										class="btn btn-danger">
+								</form>
+								<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded"
+									action="momoatm.php">
+									<input type="submit" name="momo" value="Thanh toan MOMO ATM" class="btn btn-danger">
 								</form>
 							</div> <!-- END APPOINTMENT FORM -->
 							<!-- Text -->
@@ -332,7 +345,7 @@ $department_result = mysqli_query($conn, $department_query);
 					$('#doctors_select').append('<option value="">Chọn bác sĩ</option>');
 					// Thêm các tùy chọn mới từ dữ liệu nhận được
 					$.each(data, function (index, doctor) {
-						$('#doctors_select').append('<option value="' + doctor.uuid + '">' + doctor.name + '</option>');
+						$('#doctors_select').append('<option value="' + doctor.uuid + '">BS. ' + doctor.name + '</option>');
 					});
 				},
 				error: function (response) {
@@ -340,6 +353,59 @@ $department_result = mysqli_query($conn, $department_query);
 			})
 		});
 	});
+	$('#doctors_select').change(function () {
+        var selected_doctor = $(this).val();
+        $.ajax({
+            url: './API/days_be.php',
+            type: "GET",
+            data: { doctor: selected_doctor },
+            success: function (response) {
+                var data = JSON.parse(response);
+                $('#day_id').empty().append('<option value="">Chọn Thứ</option>');
+                $('#shift_id').empty().append('<option value="">Chọn Ca</option>');
+
+                $.each(data.days, function (index, day) {
+                    $('#day_id').append('<option value="' + day.day_id + '">' + day.day_name + '</option>');
+                });
+
+                $.each(data.shifts, function (index, shift) {
+                    $('#shift_id').append('<option value="' + shift.shift_id + '">' + shift.shift_name + '</option>');
+                });
+            },
+            error: function (response) {
+                console.log("Error: ", response);
+            }
+        });
+    });
+	$('#doctors_select, #day_id').change(function () {
+    var selected_doctor = $('#doctors_select').val(); 
+    var selected_day = $('#day_id').val(); // Lấy giá trị của thẻ select chứa ngày
+    $.ajax({
+        url: './API/shifts_be.php',
+        type: "GET",
+        data: { doctor: selected_doctor, day: selected_day }, // Truyền cả hai giá trị bác sĩ và ngày
+        success: function (response) {
+            var data = JSON.parse(response);
+            $('#shift_id').empty().append('<option value="">Chọn Ca</option>');
+
+            $.each(data.shifts, function (index, shift) {
+                // Tạo tùy chọn mới
+				var option = $('<option value="' + shift.shift_id + '">' + shift.shift_name + (data.full && data.full.indexOf(shift.shift_id) !== -1 ? ' (Lịch hẹn đã đầy)' : '') + '</option>');
+                // Kiểm tra nếu số lượng lịch hẹn của ca này vượt quá giới hạn
+                if (data.full && data.full.indexOf(shift.shift_id) !== -1) {
+                    // Vô hiệu hóa tùy chọn
+                    option.prop('disabled', true);
+                }
+                // Thêm tùy chọn vào thẻ select
+                $('#shift_id').append(option);
+            });
+        },
+        error: function (response) {
+            console.log("Error: ", response);
+        }
+    });
+});
+
 </script>
 
 </html>

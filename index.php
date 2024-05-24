@@ -811,7 +811,6 @@ $doctor_result = mysqli_query($conn, $query);
 	<!-- EXTERNAL SCRIPTS
 		============================================= -->
 	<?php require_once ('./layouts/link_js.php') ?>
-	<button id="1" onClick="reply_click()">B1</button>
 	<script>
 		$(document).ready(function () {
 			$('#rg-form').on('click', function () {
@@ -843,7 +842,7 @@ $doctor_result = mysqli_query($conn, $query);
 			"closeButton": true,
 			"newestOnTop": false,
 			"progressBar": true,
-			"positionClass": "toast-bottom-center",
+			"positionClass": "toast-top-right",
 			"preventDuplicates": false,
 			"onclick": null,
 			"showDuration": "300",
@@ -857,23 +856,11 @@ $doctor_result = mysqli_query($conn, $query);
 		}
 
 		// Kiểm tra nếu đã hiển thị thông báo thành công trước đó
-		if (localStorage.getItem('success') === '1') {
-			console.log('sdad');
 
-			// Hiển thị thông báo
-			$(document).ready(function onDocumentReady() {
-				setTimeout(function doThisEveryTwoSeconds() {
-					toastr.success("Hello World!");
-				}, 2000);   // 2000 is 2 seconds  
-			});
-
-			// Xóa trạng thái đã hiển thị thông báo thành công
-			localStorage.removeItem('success');
-			
-		}
+		
 
 		// Gán trạng thái hiển thị thông báo thành công
-		localStorage.setItem('success', '1');
+		// localStorage.setItem('success', '1');
 
 
 
@@ -882,13 +869,37 @@ $doctor_result = mysqli_query($conn, $query);
 
 
 	</script>
-	<script type="text/javascript">
-		function reply_click() {
-			setTimeout(function doThisEveryTwoSeconds() {
-				toastr.success("Hello World!");
-			});
-		}
-	</script>
+	<?php
+    if (isset($_SESSION['success'])) {
+        if (!empty($_SESSION['success']) || $_SESSION['success'] === 2 || $_SESSION['success'] === 3) { ?>
+            <script>
+                $(document).ready(function onDocumentReady() {
+                    <?php if ($_SESSION['success'] === 3) { ?>
+                        toastr.success("<?php echo $_SESSION['notification']; ?>"); // Thay đổi thông báo theo yêu cầu của bạn
+                    <?php } else { ?>
+                        toastr.success("<?php echo $_SESSION['notification']; ?>");
+                    <?php } ?>
+                });
+            </script>
+            <?php
+            unset($_SESSION['success']);
+            unset($_SESSION['notification']);
+        }
+    }
+    if (isset($_SESSION['error'])) {
+        if ($_SESSION['error'] === 2) { ?>
+            <script>
+                $(document).ready(function onDocumentReady() {
+                    toastr.error("<?php echo $_SESSION['notification']; ?>");
+                });
+            </script>
+            <?php
+            unset($_SESSION['error']);
+        }
+    }
+?>
+
 </body>
 
 </html>
+

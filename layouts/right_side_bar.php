@@ -1,11 +1,25 @@
 <?php
 if(!empty($_SESSION['uuid'])){
 
-	$query = "SELECT appointments.user_uuid, appointments.day_id, appointments.shift_id, appointments.note, appointments.status, appointments.updated_at, shifts.name
-FROM appointments 
-join shifts on appointments.shift_id = shifts.id
-where appointments.user_uuid = '{$_SESSION['uuid']}' 
-ORDER BY updated_at DESC";
+	$query = "SELECT 
+	appointments.*, 
+	shifts.name AS shift_name, 
+	users.first_name, 
+	users.last_name, 
+	TIME_FORMAT(time_avg.start_time, '%H:%i') AS start_time,
+	TIME_FORMAT(time_avg.end_time, '%H:%i') AS end_time
+FROM 
+	appointments 
+LEFT JOIN 
+	shifts ON appointments.shift_id = shifts.id
+LEFT JOIN 
+	users ON appointments.doctor_uuid = users.uuid
+LEFT JOIN 
+	time_avg ON appointments.id = time_avg.appointment_id
+WHERE 
+	appointments.user_uuid = '{$_SESSION['uuid']}'
+ORDER BY  
+	appointments.updated_at DESC;";
 
 $details = mysqli_query($conn, $query);
 
@@ -20,26 +34,15 @@ if(empty($record['user_uuid'])){
 
 
 $dayNames = array(
-	1 => 'Thứ 2',
-	2 => 'Thứ 3',
-	3 => 'Thứ 4',
-	4 => 'Thứ 5',
-	5 => 'Thứ 6'
+	1 => '2',
+	2 => '3',
+	3 => '4',
+	4 => '5',
+	5 => '6',
+	6 => '7',
+	7 => 'Chủ Nhật'
 );
-$shiftNames = array(
-	1 => 'Ca 1 - 00:00-02:00',
-	2 => 'Ca 2 - 02:00-04:00',
-	3 => 'Ca 3 - 04:00-06:00',
-	4 => 'Ca 4 - 06:00-08:00',
-	5 => 'Ca 5 - 08:00-10:00',
-	6 => 'Ca 6 - 10:00-12:00',
-	7 => 'Ca 7 - 12:00-14:00',
-	8 => 'Ca 8 - 14:00-16:00',
-	9 => 'Ca 9 - 16:00-18:00',
-	10 => 'Ca 10 - 18:00-20:00',
-	11 => 'Ca 11 - 20:00-22:00',
-	12 => 'Ca 12 - 22:00-00:00',
-);
+
 ?>
 
 
@@ -59,7 +62,7 @@ $shiftNames = array(
 										<th>Tình trạng</th>
 										<th>Vấn đề</th>
 										<th>Thứ</th>
-										<th>Ca</th>
+										<th width="35%" >Thời gian</thư>
 									</tr>
 								</thead>
 								<tbody>
@@ -68,7 +71,8 @@ $shiftNames = array(
 										</td>
 										<td><?php echo $record['note'] ?></td>
 										<td><?php echo $dayNames[$record['day_id']] ?></td>
-										<td><?php echo $shiftNames[$record['shift_id']] ?></td>
+										<td><?php echo $record['end_time']. ' - ' . $record['start_time']; ?></td>
+
 									</tr>
 								</tbody>
 							</table>

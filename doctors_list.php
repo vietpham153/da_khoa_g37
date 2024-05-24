@@ -79,7 +79,7 @@ $department_result = mysqli_query($conn, $department_query);
 		<section id="doctors-3" class="bg-lightgrey wide-60 doctors-section division">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3" style="margin-bottom: 30px;margin-left: 570px;">
-					<input type="text" class="timkiem form-control" name="" value="">
+					<input type="text" class="timkiem form-control" name="" value="" placeholder="Nhập tên bác sĩ để tìm kiếm. VD: Nguyễn Thị Ly">
 				</div>
 			</div>
 
@@ -200,20 +200,6 @@ $department_result = mysqli_query($conn, $department_query);
 
 	});
 
-	function loadPagination() {
-		$.ajax({
-			url: './pagination.php', // Đường dẫn đến tập tin phân trang PHP
-			type: "GET",
-			success: function (data) {
-				// Chèn phân trang vào trang web
-				$('.pagination').html(data);
-			},
-			error: function (xhr, status, error) {
-				console.log("Request failed: " + status + ", " + error);
-				// Handle errors if needed
-			}
-		});
-	}
 
 
 

@@ -66,7 +66,7 @@
 										
 								
 								<ul class="sub-menu">
-					              		<li aria-haspopup="true"><a href="#">Thông tin cá nhân</a></li>
+					              		<li aria-haspopup="true"><a href="medical_records.php">Hồ sơ bệnh án</a></li>
 					              		<li aria-haspopup="true"><a href="history.php">Lịch sử đặt lịch</a></li>
 					              		<li aria-haspopup="true"><a href="logout.php">Đăng xuất</a></li>
 					           		</ul>
