@@ -215,15 +215,6 @@ $department_result = mysqli_query($conn, $department_query);
 									</div>
 									<!-- Contact Form Message -->
 								</form>
-								<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded"
-									action="momoqrcode.php">
-									<input type="submit" name="momo" value="Thanh toan MOMO QRcode"
-										class="btn btn-danger">
-								</form>
-								<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded"
-									action="momoatm.php">
-									<input type="submit" name="momo" value="Thanh toan MOMO ATM" class="btn btn-danger">
-								</form>
 							</div> <!-- END APPOINTMENT FORM -->
 							<!-- Text -->
 							<p class="p-sm grey-color mb-30">* Lưu ý: Thời gian khám trên chỉ là thời gian dự kiến,

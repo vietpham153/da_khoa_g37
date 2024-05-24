@@ -20,7 +20,7 @@ if (!empty($doctor) && !empty($day)) {
     // Lưu các ca đã đầy vào mảng
     $full_shifts = [];
     foreach ($appointments as $appointment) {
-        if ($appointment['appointment_count'] >= 12) { // Số lượng lịch hẹn tối đa là 12
+        if ($appointment['appointment_count'] >= 3) { // Số lượng lịch hẹn tối đa là 12
             $full_shifts[] = $appointment['shift_id']; 
         }
     }
