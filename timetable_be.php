@@ -6,7 +6,7 @@ if (!empty($_GET['staff_uuid'])) {
     $staff_uuid = $_GET['staff_uuid'];
 
     // Truy vấn SQL để lấy id của nhiệm vụ (assignment)
-    $query_assignments = "SELECT id FROM assignments WHERE staff_uuid = '$staff_uuid' AND date_end >= CURDATE()";
+    $query_assignments = "SELECT id FROM assignments WHERE staff_uuid = '$staff_uuid' OR date_end >= CURDATE()";
     $query_assignments_result = mysqli_query($conn, $query_assignments);
 
     // Lấy id_assignments từ kết quả truy vấn

@@ -64,7 +64,7 @@ $dayNames = array(
         if (!empty($appointments)) { // Kiểm tra xem có bản ghi nào được trả về không
             ?>
             <div class="container mt-3" style="min-height: 500px;overflow: visible;">
-                <h2>Dưới đây là hồ sơ bệnh án của bạn</h2>
+                <h2>Dưới đây là lịch sử đặt lịch của bạn</h2>
                 <div class="table-container" style="max-height: auto;overflow-y: auto;">
                     <table class="table table-hover">
                         <thead>
